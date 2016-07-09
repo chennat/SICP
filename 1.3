@@ -1,0 +1,19 @@
+**以下排除两数及以上相等情形**
+
+假设三数为 x, y, z; 
+
+
+思路1: 从 x 与 y 关系作为突破口 (x > y / x < y)
+
+if (x > y)
+  if (z > y) x^2 + z^2
+  else (z < y) x^2 + y^2
+  
+if (x < y)
+  if (x > z) y^2 + x^2
+  else (x < z) z^2 + y^2
+  
+思路2: 
+if (y > z and x > z) x^2 + y^2
+if (x > y and z > y) x^2 + z^2
+if (y > x and z > x) y^2 + z^2
